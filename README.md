@@ -21,7 +21,7 @@ touch letsencrypt/acme.json
 ```
 6. give permission
 ```
-chmod +x letsencrypt/acme.json
+chmod 600 letsencrypt/acme.json
 ```
 7. run Docker-compose
 ```
