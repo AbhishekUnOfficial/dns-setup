@@ -97,8 +97,8 @@ services:
     container_name: wg-easy
     hostname: wg-easy
     environment:
-      - WG_HOST=129.146.242.54
-      - PASSWORD=pass2300
+      - WG_HOST=${WG_HOST}
+      - PASSWORD=${PASSWORD}
     volumes:
       - ./config:/etc/wireguard
     ports:
@@ -133,7 +133,7 @@ services:
       - "traefik.http.routers.portainer.rule=Host(`portainer.${DOMAIN}`)"
       - "traefik.http.routers.portainer.entrypoints=websecure"
       - "traefik.http.routers.portainer.tls.certresolver=mytlschallenge"
-      - "traefik.http.services.portainer.loadbalancer.server.port=9443"
+      - "traefik.http.services.portainer.loadbalancer.server.port=9000"
     networks:
       dns:
         ipv4_address: 10.0.0.6
